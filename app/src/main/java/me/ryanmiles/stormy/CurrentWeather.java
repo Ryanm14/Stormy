@@ -2,6 +2,7 @@ package me.ryanmiles.stormy;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 import java.util.TimeZone;
 
 /**
@@ -64,7 +65,7 @@ public class CurrentWeather {
     }
 
     public String getFormattedTime(){
-        SimpleDateFormat formatter  = new SimpleDateFormat("h:mm a");
+        SimpleDateFormat formatter  = new SimpleDateFormat("h:mm a", Locale.US);
         formatter.setTimeZone(TimeZone.getTimeZone(getTimeZone()));
         Date dateTime = new Date(getTime() * 1000);
         return formatter.format(dateTime);
@@ -74,8 +75,8 @@ public class CurrentWeather {
         mTime = time;
     }
 
-    public double getTemperature() {
-        return mTemperature;
+    public int getTemperature() {
+        return (int) Math.round(mTemperature);
     }
 
     public void setTemperature(double temperature) {
@@ -90,8 +91,8 @@ public class CurrentWeather {
         mHumidity = humidity;
     }
 
-    public double getPrepChance() {
-        return mPrepChance;
+    public int getPrepChance() {
+        return (int) Math.round(mPrepChance * 100);
     }
 
     public void setPrepChance(double prepChance) {

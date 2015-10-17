@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="100"
+        android:text="--"
         android:id="@+id/temperatureLabel"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
@@ -30,17 +30,17 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="at 5:00 pm it will be"
         android:id="@+id/timeLabel"
         android:layout_above="@+id/degreeImageView"
         android:layout_centerHorizontal="true"
         android:textColor="#80ffffff"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:text="..." />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Alcaltraz Island, CA"
+        android:text="Dacula, GA"
         android:id="@+id/locationLabel"
         android:layout_above="@+id/timeLabel"
         android:layout_centerHorizontal="true"
@@ -54,8 +54,7 @@
         android:id="@+id/iconImageView"
         android:layout_alignBottom="@+id/locationLabel"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:src="@mipmap/cloudy_night" />
+        android:layout_alignParentStart="true" />
 
     <LinearLayout
         android:orientation="horizontal"
@@ -83,7 +82,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0.88"
+                android:text="..."
                 android:id="@+id/humidityValue"
                 android:textSize="24sp"
                 android:textColor="@android:color/white"
@@ -107,7 +106,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="100%"
+                android:text="..."
                 android:id="@+id/precipValue"
                 android:textColor="@android:color/white"
                 android:textSize="24sp"
@@ -119,8 +118,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Stormy with a chance of meatballs"
-        android:id="@+id/summaryTextView"
+        android:text="Getting Current Weather ..."
+        android:id="@+id/summaryLabel"
         android:layout_below="@+id/linearLayout"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
@@ -128,4 +127,18 @@
         android:textSize="18sp"
         android:layout_alignParentEnd="false"
         android:gravity="center_horizontal" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/refreshImageView"
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/refresh"/>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/refreshImageView" />
 </RelativeLayout>
