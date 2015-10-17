@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         double latitude = 37.8267;
         double longitude = -122.423;
         String forcastUrl = "https://api.forecast.io/forecast/" + apiKey + "/" + latitude + "," + longitude;
-        if(isNetworkAvaible()) {
+        if(isNetworkAvailable()) {
             OkHttpClient client = new OkHttpClient();
             Request request = new Request.Builder()
                     .url(forcastUrl)
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         return currentWeather;
     }
 
-    private boolean isNetworkAvaible() {
+    private boolean isNetworkAvailable() {
         ConnectivityManager manager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
         return (networkInfo != null && networkInfo.isConnected());

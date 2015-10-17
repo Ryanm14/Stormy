@@ -23,6 +23,7 @@ public class CurrentWeather {
     public void setIcon(String icon) {
         mIcon = icon;
     }
+
     public int getIconId(){
         int iconId = R.mipmap.clear_day;
         if (mIcon.equals("clear-day")) {
